@@ -1,0 +1,177 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: .14rem; }
+
+html, body, .box {
+  width: 100%;
+  height: 100%; }
+
+a {
+  color: #000;
+  text-decoration: none; }
+
+ul, li, ol {
+  list-style: none; }
+
+b {
+  font-weight: normal; }
+
+html {
+  font-size: 625%; }
+
+header a, section .con a {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.box {
+  display: flex;
+  flex-direction: column;
+  background: #ededed; }
+
+header {
+  width: 100%;
+  height: .4rem;
+  display: flex;
+  justify-content: space-between;
+  padding: .15rem .15rem;
+  background: #fff; }
+  header a:nth-child(2) i {
+    margin-right: .3rem;
+    font-size: .2rem;
+    font-weight: bold;
+    color: #959595; }
+
+footer {
+  width: 100%;
+  height: .4rem; }
+
+section {
+  width: 100%;
+  flex: 1;
+  overflow-y: scroll;
+  background: #ededed; }
+  section .news {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    padding-top: .1rem; }
+    section .news p {
+      width: 100%;
+      height: .4rem; }
+      section .news p:nth-child(1) {
+        border-bottom: 1px dashed #ccc; }
+      section .news p a {
+        flex: 1; }
+        section .news p a:nth-child(2) {
+          margin-left: .15rem; }
+        section .news p a:nth-child(3) {
+          color: #333; }
+        section .news p a i {
+          color: red;
+          font-size: .2rem; }
+  section .server {
+    width: 100%;
+    height: auto;
+    margin-top: .1rem;
+    background: #fff; }
+    section .server h3 {
+      width: 100%;
+      text-align: center;
+      padding: .1rem .1rem;
+      border-bottom: 1px solid #333; }
+  section .con {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: .2rem .2rem; }
+    section .con a {
+      width: 25%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: .1rem; }
+      section .con a img {
+        width: .7rem;
+        height: .7rem; }
+      section .con a b {
+        margin-top: .1rem; }
+  section .travel {
+    width: 100%;
+    height: auto;
+    background: #fff; }
+    section .travel h4 {
+      font-family: "隶书";
+      font-size: .2rem;
+      height: .4rem;
+      width: 100%;
+      text-align: center;
+      line-height: .4rem; }
+    section .travel p {
+      font-family: "隶书";
+      font-size: .2rem;
+      height: .4rem;
+      width: 100%;
+      line-height: .4rem;
+      padding-left: .15rem;
+      position: relative; }
+      section .travel p i {
+        position: absolute;
+        right: .15rem;
+        font-size: .2rem;
+        color: #333; }
+    section .travel img {
+      width: 100%;
+      height: auto; }
+  section .type {
+    width: 100%;
+    height: auto;
+    padding: .2rem .2rem;
+    background: #f5f5f5; }
+    section .type ul {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap; }
+      section .type ul li {
+        list-style: square;
+        color: #208f7f;
+        width: 50%;
+        line-height: .4rem;
+        height: .4rem;
+        font-size: .16rem; }
+  section .old {
+    width: 100%;
+    height: auto;
+    background: #fff; }
+    section .old h3 {
+      height: .5rem;
+      line-height: .5rem;
+      padding-left: .2rem; }
+  section .project {
+    width: 100%;
+    height: auto;
+    margin-top: .1rem;
+    background: #fff; }
+    section .project h3 {
+      font-size: .2rem;
+      line-height: .4rem;
+      height: .4rem;
+      text-align: center; }
+
+.container {
+  width: 100%;
+  height: auto; }
+  .container img {
+    width: 100%;
+    height: auto; }
+
+.item img {
+  width: 100%;
+  height: auto; }
+
+/*# sourceMappingURL=style.css.map */

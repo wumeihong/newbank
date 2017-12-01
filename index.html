@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+	<meta  http-equiv="X-UA-Compatible"  content="IE=edge,chrome=1">
+	<meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no,email=no">
+    <title>Document</title>
+     <link rel="stylesheet" href="css/swiper.min.css">
+     <link rel="stylesheet" href="icon/iconfont.css">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="box">
+        <header>
+            <!-- 头部 -->
+            <a href="#"><img src="images/a_02.gif" alt=""></a>
+            <a href="#"><i class="iconfont">&#xe729;</i><i class="iconfont">&#xe6eb;</i></a>
+        </header>
+        <section>
+            <!-- 轮播图 -->
+            <div class="carousel slide" id="myCarousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="images/b_02.gif" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="images/b_02.gif" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="images/b_02.gif" alt="">
+                    </div>
+                        <div class="item">
+                        <img src="images/b_02.gif" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="images/b_02.gif" alt="">
+                    </div>
+                        <div class="item">
+                        <img src="images/b_02.gif" alt="">
+                    </div>
+                </div>
+                <ol class="carousel-indicators">
+                    <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+                    <li data-slide-to="1" data-target="#myCarousel"></li>
+                    <li data-slide-to="2" data-target="#myCarousel"></li>
+                    <li data-slide-to="3" data-target="#myCarousel"></li>
+                    <li data-slide-to="4" data-target="#myCarousel"></li>
+                    <li data-slide-to="5" data-target="#myCarousel"></li>
+                </ol>
+            </div>
+
+            <!-- 消息 -->
+            <div class="news">
+                <p><a href="#"><i class="iconfont">&#xe705;</i></a><a href="#">全国——刷农行银联白金卡,6积分抢兑BL...</a><a href="#">2017-11-03</a></p>
+                <p><a href="#"><i class="iconfont">&#xe705;</i></a><a href="#">中国农业银行博士后科研工作站2018年度...</a><a href="#">2017-11-29</a></p>
+            </div>
+
+            <!-- 便捷服务 -->
+            <div class="server">
+                <h3>便捷服务</h3>
+                <div class="con">
+                    <a href="#">
+                        <img src="images/c_03.gif" alt="">
+                        <b>掌上银行下载</b>
+                    </a>
+                </div>
+                    <!-- 旅行 -->
+                <div class="travel">
+                    <h4>您的每段旅程,我们全心陪伴</h4>
+                    <p>学生时代<i class="iconfont">&#xe650;</i></p>
+                    <p>职场生涯<i class="iconfont">&#xe650;</i></p>
+                    <p>品质家庭<i class="iconfont">&#xe650;</i></p>
+                <img src="images/k_02.gif" alt="">
+                </div>
+            </div>
+            <!-- 类型 -->
+            <div class="type">
+                <ul>
+                    <li>一键缴费</li>
+                    <li>网上理财</li>
+                    <li>保险保障</li>
+                    <li>房屋贷款</li>
+                    <li>家装贷款</li>
+                    <li>汽车贷款</li>
+                    <li>金穗悠游世界信用卡</li>
+                    <li>资金归集</li>
+                    <li>旅游度假</li>
+                </ul>
+            </div>
+            <!-- 养老保障 -->
+            <div class="old">
+                <h3>养老保障</h3>
+            </div>
+            <!-- 产品服务 -->
+            <div class="project">
+                <h3>产品.服务</h3>
+                
+            </div>
+        </section>
+        <footer></footer>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $('#myCarousel').carousel({
+            interval:2000,
+            wrap:true,
+         })
+    function ajax(url){
+         return new Promise(function(resolve,reject){
+            var xhr = null;
+             if(window.XMLHttpRequest){
+                xhr = new XMLHttpRequest();
+            }else{
+                xhr = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            var handel = function(){ 
+                if(xhr.readyState!==4)return;
+                if(xhr.status==200){
+                   resolve(xhr.responseText)//正确的时候返回一个参数
+                }else{
+                    reject(xhr.statusText)//错误时返回的参数
+                }
+            }
+            xhr.open("GET",url,true);
+            xhr.send();
+            xhr.onreadystatechange=handel;
+
+        })
+    }
+    ajax("http://localhost:8080/userinfo").then(function(data){
+        var datas=JSON.parse(data);
+        var html = "";
+        console.log(datas)
+       datas.forEach(function(val){
+           html+="<a><img src="+val.img+"><b>"+val.title+"</b></a>"
+       })
+       $('.con').html(html)
+    }).catch(function(err){
+        console.log(err)
+    })
+    </script>
+
+</body>
+</html>
